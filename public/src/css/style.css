@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-small: 10px;
+  --font-regular: 16px;
+  --font-family: "Roboto", sans-serif;
+
+  --font-weight-regular: 300;
+  --font-weight-bold: 700;
+
+  --darker-grey: #282828;
+  --dark-grey: #ddd;
+  --light-grey: #eee;
+  --lighter-grey: #fff;
+  --lightest-grey: #f2f2f2;
+
+  --lighter-black: #aba9a9;
+  --lightest-black: #969494;
+
+  --lightest-white: #efeded;
+  --light-purple: #ab14ab;
+  --lighter-purple: #fed2ff;
+  --lightest-purple: #f8bcf8;
+
+  --light-red: #f02323;
+  --lighter-red: #bf5555;
+
+  --light-shadow: rgba(0, 0, 0, 0.4);
+  --lighter-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-size: var(--font-regular);
+  font-family: var(--font-family);
+}
+
+.container {
+  display: grid;
+  /* grid-template-columns: 1; */
+  grid-template-rows: 50px auto 20px;
+}
+
+.header {
+  display: grid;
+  background-color: var(--light-purple);
+  color: var(--lighter-grey);
+
+  grid-template-columns: 5fr 1fr;
+  padding: 1em;
+}
+
+/* Footer realted */
+.footer {
+  background-color: var(--light-purple);
+  z-index: 1;
+}
+
+.left-arrow {
+  color: var(--lighter-grey);
+  padding-left: 5px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+/* Content related */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: calc(100vh - 70px);
+}
+
+/* title of the application related */
+.title {
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+}
+
+.bold-title {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Login related */
+.login {
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.login-title {
+  margin-bottom: 20px;
+  color: var(--light-purple);
+}
+
+.login-form {
+  border: solid 1px var(--dark-grey);
+  box-shadow: 0 0 10px var(--light-shadow);
+  justify-self: center;
+  padding: 4em;
+}
+
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: solid 1px var(--light-purple);
+  padding: 0.9em;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+}
+
+input[type="password"]:hover,
+input[type="text"]:hover,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-bottom: solid 2px var(--light-purple);
+}
+
+/* Error message in the Login screen */
+.error-message {
+  font-size: 0.7em;
+  background-color: var(--light-shadow);
+  padding: 1em;
+  color: var(--lighter-red);
+  max-height: 33px;
+  border-left: solid 2px;
+  border-radius: 2px;
+}
+
+/* user logo related */
+.user-info {
+  /*grid-column: 6;*/
+  position: relative;
+  justify-self: end;
+}
+
+.user-icon {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  top: -6px;
+  left: -35px;
+  border: solid 1px var(--dark-grey);
+  text-transform: uppercase;
+  padding: 0.2em;
+  font-size: 1em;
+}
+
+.user-greeting {
+  display: block;
+}
+
+.user-greeting:hover {
+  cursor: pointer;
+}
+
+/* drop down menu */
+.user-info > .drop-down {
+  display: none;
+}
+
+.user-info:hover > .drop-down {
+  display: block;
+}
+
+.drop-down {
+  padding: 1em;
+  position: absolute;
+}
+
+/* Log out div */
+.logout {
+  font-size: 0.7em;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  top: 23px;
+  color: var(--light-purple);
+  background-color: var(--lightest-grey);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.logout::after {
+  content: "";
+  border-right: solid 5px transparent;
+  border-bottom: solid 5px var(--lightest-grey);
+  border-left: solid 5px transparent;
+  position: absolute;
+  top: -5px;
+  right: 8px;
+  width: 0;
+  height: 0;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: var(--light-purple);
+  padding-left: 0.5em;
+  text-align: left;
+  padding-right: 0.5em;
+  background-color: var(--lightest-grey);
+}
+
+.logout-link:hover,
+.logout-link:focus {
+  opacity: 0.6;
+}
+
+/* Rooms panel related styles */
+.rooms-panel {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.room-info {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  margin-bottom: 10px;
+}
+
+.room-initials {
+  border-radius: 50px;
+  border: solid 1px var(--dark-grey);
+  align-self: center;
+  justify-self: center;
+  padding: 0.5em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.online-mark {
+  background-color: var(--light-purple);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+
+.active-room {
+  background-color: var(--lightest-purple);
+}
+
+.room-info:hover,
+.room-info:focus {
+  background-color: var(--lightest-purple);
+  cursor: pointer;
+}
+
+.room-icon-div {
+  justify-self: center;
+  display: grid;
+}
+
+.room-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  padding: 4px;
+}
+
+.room-name {
+  font-size: 0.9em;
+  padding: 0.6em;
+  color: var(--darker-grey);
+}
+
+.last-message {
+  font-size: 0.75em;
+  color: var(--lightest-black);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+}
+
+.unread-msg {
+  font-weight: bold;
+}
+
+.date-info {
+  font-size: 0.65em;
+  padding: 0.9em;
+  color: var(--lighter-black);
+  text-align: right;
+}
+
+/* message panel related */
+.message-panel {
+  background-color: var(--lighter-grey);
+  display: grid;
+  grid-template-rows: auto 80px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.show-messages {
+  position: relative;
+  display: grid;
+  overflow-y: auto;
+}
+
+.msg {
+  font-size: 0.7em;
+  text-align: left;
+  border: 1px solid var(--lighter-grey); /*#f9f9f9;*/
+  border-radius: 5px;
+  padding: 1.5em;
+  margin: 1em;
+
+  position: relative;
+  word-wrap: break-word;
+  max-height: 100px;
+  white-space: pre-wrap;
+}
+
+.room-msg {
+  background-color: var(--lightest-white);
+  justify-self: start;
+}
+
+.room-msg::before {
+  content: "";
+  /* border-top: solid -4px transparent; */
+  border-right: solid 20px var(--lightest-white);
+  border-bottom: solid 28px transparent;
+  position: absolute;
+  left: -12px;
+  width: 0;
+  height: 0;
+  top: 8px;
+}
+
+.my-msg {
+  background-color: var(--lighter-purple);
+  justify-self: end;
+}
+
+.my-msg::after {
+  content: "";
+  /* border-top: solid -4px transparent; */
+  border-left: solid 20px var(--lighter-purple);
+  border-bottom: solid 28px transparent;
+  position: absolute;
+  right: -12px;
+  width: 0;
+  height: 0;
+  top: 8px;
+}
+
+.time-sent {
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  padding: 1em;
+  font-size: 0.8em;
+  color: var(--lightest-black); /*#797676;*/
+}
+
+/* message writing div related styles */
+.msg-write-div {
+  align-self: end;
+  padding: 1em;
+  font-size: 0.8em;
+  font-family: inherit;
+
+  border: 1px solid var(--light-purple);
+  border-radius: 2px;
+
+  overflow-y: hidden;
+  height: 77px;
+}
+
+.msg-write-div:hover,
+.msg-write-div:focus {
+  /*border: 2px solid #ab14ab;*/
+  box-shadow: 0 0 3px var(--light-shadow);
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border: 0;
+  outline: 0;
+}
+
+/* Loading image related */
+.loading-div {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.loading-gif {
+  width: 100px;
+}
+
+/* Hide a div */
+.hide-div {
+  display: none;
+}
+
+/* media queries */
+@media screen and (max-width: 500px) {
+  body {
+    font-size: var(--font-small);
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .my-msg::after {
+    right: -8px;
+    top: 8px;
+    border-left: solid 11px var(--lighter-purple);
+    border-bottom: solid 11px transparent;
+  }
+
+  .room-msg::before {
+    left: -7px;
+    top: 8px;
+    border-right: solid 11px var(--lightest-white);
+    border-bottom: solid 11px transparent;
+  }
+
+  .time-sent {
+    bottom: -4px;
+    right: 0;
+  }
+
+  .online-mark {
+    top: 0px;
+    right: 1px;
+  }
+}
