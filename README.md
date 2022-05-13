@@ -1,4 +1,4 @@
-# Live-Chat-WebApp
+# Real-time Chat WebApp
 🗣 ReactJS + Node.js + MongoDB Real-time chat WebApp  
 
 Learn by reference from [anijitsahu](https://github.com/anijitsahu).  
