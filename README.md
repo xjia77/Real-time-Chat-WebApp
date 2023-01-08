@@ -1,5 +1,5 @@
 # Real-time Chat WebApp
-🗣 This Project is a ReactJS + Node.js + MongoDB Real-time chat WebApp.  
+🗣 This Project is a ReactJS + Node.js + MongoDB Real-time chat WebApp. This application uses the React JS component-oriented UI creation example.  
 
 Learn by reference from [anijitsahu](https://github.com/anijitsahu).  
 
